@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bala Dental Clinic — Madurai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF6EF;
+    --forest-900:#1F3A2C;
+    --forest-700:#2E5240;
+    --gold-500:#C9A227;
+    --gold-600:#B08D1F;
+    --charcoal:#232323;
+    --white:#FFFFFF;
+    --line:#E6DFD0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Work Sans',sans-serif;color:var(--charcoal);background:var(--ivory);line-height:1.65;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  nav{position:sticky;top:0;z-index:50;background:var(--forest-900);color:var(--ivory);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:0.01em;}
+  .brand span{color:var(--gold-500);}
+  .nav-links{display:flex;gap:32px;font-size:0.88rem;font-weight:500;}
+  .nav-links a{opacity:0.85;}
+  .nav-links a:hover{opacity:1;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:6px;font-weight:600;font-size:0.86rem;letter-spacing:0.02em;transition:transform .15s,box-shadow .15s;}
+  .btn:focus-visible{outline:3px solid var(--gold-500);outline-offset:2px;}
+  .btn-gold{background:var(--gold-500);color:var(--forest-900);}
+  .btn-gold:hover{background:var(--gold-600);transform:translateY(-1px);}
+  .btn-outline-ivory{border:1.5px solid rgba(250,246,239,0.4);color:var(--ivory);}
+  .btn-outline-ivory:hover{border-color:var(--ivory);}
+  .btn-outline-forest{border:1.5px solid var(--forest-900);color:var(--forest-900);}
+  .btn-outline-forest:hover{background:var(--forest-900);color:var(--ivory);}
+
+  /* HERO */
+  .hero{background:var(--forest-900);color:var(--ivory);text-align:center;padding:96px 0 70px;position:relative;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-500);font-weight:600;margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;max-width:760px;margin:0 auto 22px;}
+  .hero p.lead{font-size:1.08rem;color:#CFE0D5;max-width:520px;margin:0 auto 36px;}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;}
+
+  .smile-arc{width:220px;height:60px;margin:0 auto 8px;display:block;}
+  .rating-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .rating-row .stars{color:var(--gold-500);font-size:1.1rem;letter-spacing:2px;}
+  .rating-row .num{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;}
+  .rating-row .sep{width:1px;height:20px;background:rgba(250,246,239,0.25);}
+  .rating-row .sub{font-size:0.85rem;color:#B9CDC0;}
+
+  /* SERVICES */
+  .section{padding:90px 0;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 52px;}
+  .section-head .eyebrow{color:var(--forest-700);justify-content:center;}
+  .section-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);color:var(--forest-900);}
+  .section-head p{color:#5A5A52;margin-top:12px;}
+
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .svc-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:30px 24px;text-align:center;transition:transform .2s, box-shadow .2s, border-color .2s;}
+  .svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 30px -18px rgba(31,58,44,0.22);border-color:var(--gold-500);}
+  .svc-icon{width:38px;height:38px;margin:0 auto 16px;color:var(--forest-700);}
+  .svc-card h3{font-size:1.15rem;color:var(--forest-900);margin-bottom:8px;font-weight:600;}
+  .svc-card p{font-size:0.86rem;color:#6B6B62;}
+
+  /* TRUST */
+  .trust{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding:54px 24px;text-align:center;}
+  .trust .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--forest-900);}
+  .trust .stat-label{font-size:0.84rem;color:#6B6B62;margin-top:4px;letter-spacing:0.02em;}
+  .trust .stat{border-right:1px solid var(--line);}
+  .trust .stat:last-child{border-right:none;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;}
+  .about-card{background:var(--forest-900);color:var(--ivory);border-radius:6px;padding:44px;position:relative;overflow:hidden;}
+  .about-card .quote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.45;font-style:italic;margin-bottom:18px;}
+  .about-card .who{font-size:0.85rem;color:#B9CDC0;}
+  .about-card .gold-rule{width:46px;height:3px;background:var(--gold-500);margin-bottom:22px;}
+  .about-list{list-style:none;display:flex;flex-direction:column;gap:20px;}
+  .about-list li{display:flex;gap:16px;align-items:flex-start;}
+  .about-list .check{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--forest-900);color:var(--gold-500);display:flex;align-items:center;justify-content:center;font-size:0.8rem;}
+  .about-list h4{font-size:1.02rem;color:var(--forest-900);font-weight:600;margin-bottom:3px;}
+  .about-list p{font-size:0.88rem;color:#5A5A52;}
+
+  /* CONTACT */
+  .contact{background:var(--forest-900);color:var(--ivory);}
+  .contact .section-head .eyebrow{color:var(--gold-500);}
+  .contact .section-head h2{color:var(--ivory);}
+  .contact .section-head p{color:#CFE0D5;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-card{background:rgba(250,246,239,0.06);border:1px solid rgba(250,246,239,0.18);border-radius:6px;padding:36px;}
+  .contact-card h3{font-size:1.3rem;margin-bottom:22px;color:var(--ivory);}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+  .info-row svg{width:19px;height:19px;color:var(--gold-500);flex-shrink:0;margin-top:2px;}
+  .info-row div b{display:block;font-size:0.74rem;text-transform:uppercase;letter-spacing:0.06em;color:#9DB5A8;margin-bottom:2px;}
+  .info-row div span{font-size:0.96rem;color:var(--ivory);}
+  .contact-ctas{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+  .map-frame{border-radius:6px;overflow:hidden;border:1px solid rgba(250,246,239,0.18);min-height:340px;}
+  .map-frame iframe{width:100%;height:100%;border:0;min-height:340px;filter:grayscale(0.1);}
+
+  footer{background:var(--ivory);color:#6B6B62;padding:30px 0;font-size:0.84rem;border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  footer a{color:var(--forest-900);font-weight:600;}
+
+  @media (max-width:860px){
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .trust .wrap{grid-template-columns:1fr;}
+    .trust .stat{border-right:none;border-bottom:1px solid var(--line);padding-bottom:24px;}
+    .trust .stat:last-child{border-bottom:none;padding-bottom:0;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Bala <span>Dental</span> Clinic</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Visit Us</a>
+    </div>
+    <a href="tel:+919894141777" class="btn btn-gold">Book a Visit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">★ S S Colony, Madurai — Family Dental Care</div>
+    <h1>A healthy smile,<br>looked after with care.</h1>
+    <p class="lead">Bala Dental Clinic has cared for smiles across Madurai for years — gentle treatment, honest advice, and results patients keep coming back for.</p>
+    <div class="hero-ctas">
+      <a href="tel:+919894141777" class="btn btn-gold">📞 Call to Book</a>
+      <a href="https://wa.me/919894141777" class="btn btn-outline-ivory">WhatsApp Us</a>
+    </div>
+
+    <svg class="smile-arc" viewBox="0 0 220 60" fill="none">
+      <path d="M10 10 Q110 70 210 10" stroke="#C9A227" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="rating-row">
+      <span class="stars">★★★★★</span>
+      <span class="num">4.9</span>
+      <span class="sep"></span>
+      <span class="sub">236 patient reviews on Google</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Offer</div>
+      <h2>Complete dental care, one clinic.</h2>
+      <p>From routine checkups to specialised treatment, every visit is planned around your comfort.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>General Dentistry</h3>
+        <p>Checkups, cleaning, fillings and everyday care for the whole family.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M19.1 19.1l-4.2-4.2M4.9 19.1l4.2-4.2M19.1 4.9l-4.2 4.2"/></svg>
+        <h3>Root Canal Treatment</h3>
+        <p>Pain-relieving, precise root canal care with modern, gentle technique.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 1 1 16 0c0 4-3 7-3 10H7c0-3-3-6-3-10z"/></svg>
+        <h3>Cosmetic & Whitening</h3>
+        <p>Brighter, more confident smiles with whitening and cosmetic treatments.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="9" width="16" height="6" rx="3"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg>
+        <h3>Orthodontics</h3>
+        <p>Braces and aligners for children and adults, with clear treatment timelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="stat"><div class="stat-num">236</div><div class="stat-label">Google reviews</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Average rating</div></div>
+    <div class="stat"><div class="stat-num">S S Colony</div><div class="stat-label">Madurai location</div></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-card">
+      <div class="gold-rule"></div>
+      <p class="quote">"Professional, painless, and they explained every step before doing anything."</p>
+      <p class="who">— A recurring note across Google reviews</p>
+    </div>
+    <div>
+      <div class="section-head" style="text-align:left;margin:0 0 32px;">
+        <div class="eyebrow" style="justify-content:flex-start;">Why Patients Stay With Us</div>
+        <h2>Care built on trust, visit after visit.</h2>
+      </div>
+      <ul class="about-list">
+        <li><span class="check">✓</span><div><h4>Gentle, modern technique</h4><p>Treatment focused on comfort, with clear explanations at every step.</p></div></li>
+        <li><span class="check">✓</span><div><h4>Transparent pricing</h4><p>You'll know the cost before treatment begins — no surprises.</p></div></li>
+        <li><span class="check">✓</span><div><h4>Flexible scheduling</h4><p>Evening and weekend slots available for working patients and families.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Visit or Call</div>
+      <h2>We're in S S Colony, Madurai.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Clinic Details</h3>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Address</b><span>64, Kannadasan Main Street, S S Colony, Madurai, Tamil Nadu</span></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.68 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.83.55 2.78.68A2 2 0 0 1 22 16.92z"/></svg>
+          <div><b>Phone</b><span>+91 98941 41777</span></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div><b>Hours</b><span>Mon – Sat, 9:00 AM – 8:30 PM</span></div>
+        </div>
+        <div class="contact-ctas">
+          <a href="tel:+919894141777" class="btn btn-gold">📞 Call Now</a>
+          <a href="https://wa.me/919894141777" class="btn btn-outline-ivory">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=Bala+Dental+Clinic+SS+Colony+Madurai&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bala Dental Clinic location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Bala Dental Clinic, Madurai</span>
+    <span>Website crafted by <a href="https://sivasudalai-portfolio.netlify.app/" target="_blank">SivaSudalai.dev</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
